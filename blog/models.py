@@ -29,6 +29,7 @@ class Post(models.Model):
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name='blog_posts')
     status = models.CharField(max_length=10, choices=options, default='published')
+    objects = models.Manager()
     postobjects = PostObjects()
 
     class Meta:
